@@ -2,29 +2,28 @@ import React from "react";
 const Equipe=(props)=>{
   return(
     <div>
-      <Sobre nome={props.nome} cargo={props.cargo} idade={props.idade}/>
+      <Exclusivo nome={props.nome} cargo={props.cargo} idade={props.idade}/>
     </div>
   )
 }
 
-const Sobre=(props)=>{
-  return(
-    <div>
-      <h1>Olá o meu nome é {props.nome}
-      </h1>
-      <h1>Minha profissão é {props.cargo}</h1>
-      <h1>Tenho{props.idade} anos
-      </h1>
+  const Exclusivo=(props)=>{
+    return(
+      <div>
+      <h1>Meu nome é {props.nome}</h1>
+      <h1>Eu trabalho como programador{props.cargo}</h1>
+      <h1>Eu tenho {props.idade} anos</h1>
+      </div>
+    )
+    
+  }
 
-    </div>
-  )
-}
 
 export default function App() {
   return (
     <div>
       <h1>Vamos Montar Equipe:)</h1>
-      <Equipe nome="ARI" cargo="Desenvolvedor" idade=" 29"/>
+     <Equipe nome="ARI" cargo="Desenvolvedor" idade="39"/>
     </div>
   );
 }
