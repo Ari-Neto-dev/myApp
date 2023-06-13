@@ -7,6 +7,7 @@ class Equipe extends Component{
       <Sobre nome={this.props.nome}
       ocupacao={this.props.cargo}
       idade={this.props.idade}/>
+      <Social/>
     </div>
   )
 }
@@ -24,6 +25,15 @@ class Sobre extends Component{
   }
 }
 
+  const Social=(props)=>{
+    return(
+      <div>
+        <href>https://www.google.com</href>
+        <br/>
+        <href>https://www.facebook.com</href>
+      </div>
+    )
+  }
 
 export default function App() {
   return (
