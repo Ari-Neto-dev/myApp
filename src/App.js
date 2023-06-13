@@ -1,48 +1,45 @@
-import React,{Component} from "react";
+import React, { Component } from "react";
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nome: "Ariosvaldo",
+      contador: 0,
+    };
 
-class Equipe extends Component{
-  render(){
-  return(
-    <div>
-      <Sobre nome={this.props.nome}
-      ocupacao={this.props.cargo}
-      idade={this.props.idade}/>
-      <Social/>
-    </div>
-  )
-}
-}
+    this.aumentar = this.aumentar.bind(this);
+    this.diminuir = this.diminuir.bind(this);
+  }
+  aumentar() {
+    let state = this.state;
+    state.contador += 1;
+    state.nome ='José';
+    this.setState(state);
+  }
+  diminuir() {
+    let state = this.state;
+    if(state.contador ===0){
+      alert('Opa chegou a zero !');
+      return;
+    }
+    state.contador -= 1;
+    this.setState(state);
+  }
 
-class Sobre extends Component{
-  render(){
-    return(
+  render() {
+    return (
       <div>
-          <h1>O meu nome é:{this.props.nome}</h1>
-        <h1>Mimha profissão é :{this.props.ocupacao}</h1>
-        <h1>E tenho {this.props.idade}</h1>
+        <h1>Contador</h1>
+        {this.state.nome}
+        <h3>
+          {this.state.nome}
+          <button onClick={this.diminuir}>-</button>
+          {this.state.contador}
+          <button onClick={this.aumentar}>+</button>
+        </h3>
       </div>
-    )
+    );
   }
 }
 
-  const Social=(props)=>{
-    return(
-      <div>
-        <href>https://www.google.com</href>
-        <br/>
-        <href>https://www.facebook.com</href>
-      </div>
-    )
-  }
-
-export default function App() {
-  return (
-    <div>
-      <h1>Vamos para cima</h1>
-      <Equipe nome="Ari" cargo="programador" idade= "70"/>
-     
-     
-
-    </div>
-  );
-}
+export default App;
