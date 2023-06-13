@@ -1,38 +1,26 @@
-import React, {Component} from "react";
+import React from "react";
+const Zabumba=(props)=>{
+  return(
+    <div>
+      <Zarzur nome={props.nome}/>
+    </div>
+  )
+}
 
-
-class Equipe extends Component{
-  render(){
+  const Zarzur=(props)=>{
     return(
       <div>
-        <Sobre nome={this.props.nome} cargo={this.props.cargo} idade={this.props.idade}/>
-        <hr/>
+        <h1>Agora vai o meu nome é {props.nome}</h1>
       </div>
     )
   }
-}
-
-class Sobre extends Component{
-  render(){
-    return(
-      <div>
-        <h2>Olá eu sou{this.props.nome} </h2>
-        <h2>Minha ocupação:{this.props.cargo}</h2>
-        <h2>Eu tenho{this.props.idade} anos</h2>
-      
-
-      </div>
-    );
-}
-}
-
 
 export default function App() {
   return (
     <div>
-      <h1>Agora é para Valer!</h1>
-      <Equipe nome=" Ari" cargo="Programador" idade="100"/>
-      <Equipe nome=" Joaquin" cargo="Gerente" idade=" 50"/>
+      <h1>Vamos para cima</h1>
+      <Zabumba nome="Ari"/>
+     
 
     </div>
   );
