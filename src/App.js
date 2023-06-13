@@ -4,12 +4,24 @@ class Equipe extends Component{
   render(){
   return(
     <div>
-      <h2>Olá eu sou o {this.props.nome}</h2>
-      <h2>A minha ocupação é {this.props.cargo}</h2>
-      <h2>E tenho {this.props.idade} anos </h2>
+      <Sobre nome={this.props.nome}
+      ocupacao={this.props.cargo}
+      idade={this.props.idade}/>
     </div>
   )
 }
+}
+
+class Sobre extends Component{
+  render(){
+    return(
+      <div>
+          <h1>O meu nome é:{this.props.nome}</h1>
+        <h1>Mimha profissão é :{this.props.ocupacao}</h1>
+        <h1>E tenho {this.props.idade}</h1>
+      </div>
+    )
+  }
 }
 
 
