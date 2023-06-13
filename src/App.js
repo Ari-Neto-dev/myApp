@@ -1,25 +1,24 @@
-import React from "react";
-const Zabumba=(props)=>{
+import React,{Component} from "react";
+
+class Equipe extends Component{
+  render(){
   return(
     <div>
-      <Zarzur nome={props.nome}/>
+      <h2>Olá eu sou o {this.props.nome}</h2>
+      <h2>A minha ocupação é {this.props.cargo}</h2>
+      <h2>E tenho {this.props.idade} anos </h2>
     </div>
   )
 }
+}
 
-  const Zarzur=(props)=>{
-    return(
-      <div>
-        <h1>Agora vai o meu nome é {props.nome}</h1>
-      </div>
-    )
-  }
 
 export default function App() {
   return (
     <div>
       <h1>Vamos para cima</h1>
-      <Zabumba nome="Ari"/>
+      <Equipe nome="Ari" cargo="programador" idade= "70"/>
+     
      
 
     </div>
