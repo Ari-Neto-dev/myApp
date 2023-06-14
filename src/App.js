@@ -1,45 +1,37 @@
 import React, { Component } from "react";
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      nome: "Ariosvaldo",
-      contador: 0,
-    };
 
-    this.aumentar = this.aumentar.bind(this);
-    this.diminuir = this.diminuir.bind(this);
-  }
-  aumentar() {
-    let state = this.state;
-    state.contador += 1;
-    state.nome ='José';
-    this.setState(state);
-  }
-  diminuir() {
-    let state = this.state;
-    if(state.contador ===0){
-      alert('Opa chegou a zero !');
-      return;
-    }
-    state.contador -= 1;
-    this.setState(state);
-  }
-
+class Resumo extends Component {
   render() {
     return (
       <div>
-        <h1>Contador</h1>
-        {this.state.nome}
-        <h3>
-          {this.state.nome}
-          <button onClick={this.diminuir}>-</button>
-          {this.state.contador}
-          <button onClick={this.aumentar}>+</button>
-        </h3>
+        <Agora nome={this.props.nome}
+         cargo={this.props.cargo}
+         idade={this.props.idade}/>
       </div>
     );
   }
 }
 
-export default App;
+class Agora extends Component{
+  render(){
+    return(
+      <div>
+        <h1>O meu nome é {this.props.nome}</h1>
+        <h3>Atualmente trabalho com {this.props.cargo}</h3>
+        <h4>Tenho {this.props.idade} anos</h4>
+      </div>
+    )
+  }
+}
+
+
+
+
+export default function App() {
+  return (
+    <div>
+      <h1>olá! Mundo, eu estou aqui.</h1>
+      <Resumo nome="ARI" cargo=" DEV" idade=" 30" />
+    </div>
+  );
+}
