@@ -1,17 +1,15 @@
-import React,{Component} from "react";
-import Membro from './componentes/Membro';
-
+import React, {Component} from "react";
+import Membro from './componentes/Membro'
 class App extends Component{
   render(){
     return(
       <div>
-        <Membro nome="Visitante"/>
-    
-
+        olá Mundo !
+        <Membro/>
       </div>
-    );
+    )
+    
   }
 }
-
 
 export default App;
