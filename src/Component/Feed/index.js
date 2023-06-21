@@ -4,7 +4,7 @@ class Feed extends Component{
     return(
       <div key={this.props.id}>
         <h3>{this.props.username}</h3>
-        <h6>{this.props.curtidas} curtidas/ {this.props.comentarios} comentários</h6>
+        <h6>{this.props.curtidas > 1 ? this.props.curtidas + ' curtidas': this.props.curtidas + ' curtida'} </h6>
 
       </div>
     );
