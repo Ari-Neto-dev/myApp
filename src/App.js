@@ -10,6 +10,8 @@ class App extends Component {
         {id:2, username:'Lucas',curtidas:'120',comentarios:24},
         {id:3, username:'Amanda',curtidas:'30',comentarios:12},
         {id:4, username:'Silvia',curtidas:'1',comentarios:0},
+        {id:5, username:'Rosa',curtidas:'100',comentarios:8},
+        {id:6, username:'Maria',curtidas:'99',comentarios:10},
 
 
         
