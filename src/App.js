@@ -6,9 +6,26 @@ class App extends Component{
     this.state={
       nome:'',
       email:'',
-      senha:''
+      senha:'',
+      error:''
 
     };
+
+    this.cadastrar = this.cadastrar.bind(this);
+  }
+
+  cadastrar(event){
+    const {nome, email, senha}=this.state;
+    if(nome!=='' && email!=='' && senha!==''){
+    alert(`Nome:${nome} \nEmail:${email} \nSenha: ${senha} ` );
+  }else{
+    this.setState({error: 'Ops Parece que está faltando algo'});
+
+  }
+
+    event.preventDefault();
+
+
   }
 
 
@@ -16,7 +33,10 @@ class App extends Component{
     return(
       <div>
         <h1>Novo Usuário</h1>
-        <form>
+        {this.state.error &&<p>{this.state.error}</p>}
+
+        <form onSubmit={this.cadastrar}> 
+
           <label>Nome:</label>
           <input type='text' value={this.state.nome}
           onChange={(e)=>this.setState({nome:e.target.value})} /><br/><br/>
@@ -27,7 +47,18 @@ class App extends Component{
 
           <label>Senha:</label>
           <input type='password' value={this.state.senha}
-          onChange={(e)=>this.setState({senha:e.target.value})}/>
+          onChange={(e)=>this.setState({senha:e.target.value})}/><br/><br/>
+
+          <button type="submit">
+            Cadastrar
+        </button>
+        
+
+          
+
+
+
+
         </form>
 
       </div>
